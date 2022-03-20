@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.2-alpine3.15
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=asdf1234
+    ports:
+      - '5432:5432'
+    volumes:
+      - ~/dev/test-db/go-hello-web:/var/lib/postgresql/data
